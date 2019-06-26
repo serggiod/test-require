@@ -1,0 +1,24 @@
+<script src="./js/this.libs.require.js"></script>
+<script src="./js/this.libs.jquery.js"></script>
+<body>
+    <script>
+
+	var app = Array();
+	    app.push('this');
+	    app.push('this.alerts.hola');
+
+	var config = new Object();
+	     config.baseUrl = 'js/';
+
+	var run = ($this,$thisAlertsHola)=>{
+
+		$this.alerts.hola = $thisAlertsHola.hola;
+		$this.alerts.hola($this);
+
+	    };
+
+	requirejs.config(config);
+	requirejs(app,run);
+
+    </script>
+</body>
